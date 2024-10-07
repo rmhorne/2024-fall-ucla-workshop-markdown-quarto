@@ -360,7 +360,7 @@ format:
 
 ::: 
 
-## YAML Options {auto-animate="true"}
+## YAML Jupyter Options {auto-animate="true"}
 
 ```yaml
 ---

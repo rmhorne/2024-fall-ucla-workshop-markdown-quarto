@@ -1,0 +1,97 @@
+# Yaml Samples
+
+## The Main Presentation
+```yaml
+---
+title: Authoring and Publication Pipeline Using Markdown, Zotero, VS Code, GitHub, and Quarto 
+author:
+  - name: Ryan Horne
+    orcid: 0000-0002-5009-3116 
+    affiliation: Office of Advanced Research Computing, UCLA
+    affiliation-url: https://oarc.ucla.edu/
+    roles: writing
+    corresponding: true
+license: "CC BY-SA"
+format:
+ revealjs:
+  preview-links: true
+  logo: https://raw.githubusercontent.com/rmhorne/work-images/ed53108a33ec6274cff3dd8c06aad26405ef7645/images/creative-commons/cc-by-sa.svg
+  theme: [default, styles.scss]
+  mermaid:
+    theme: forest
+---
+```
+
+## YAML Options Part 2 {auto-animate="true"}
+
+```yaml
+---
+title: "OARC Workshop"
+authors:
+  - name: Ryan Horne
+    orcid: 0000-0002-5009-3116
+    affiliation: Office of Advanced Research Computing, UCLA
+    affiliation-url: https://oarc.ucla.edu/
+    roles: writing
+    corresponding: true
+format:
+    html:
+        toc: true
+        code-fold: true
+    revealjs:
+        output-file: presentation.html
+        logo: https://raw.githubusercontent.com/rmhorne/work-images/ed53108a33ec6274cff3dd8c06aad26405ef7645/images/creative-commons/cc-by-sa.svg
+        theme: [default]
+    docx:
+        toc: true
+    pdf:
+        toc: true
+---
+```
+
+## YAML Jupyter Options {auto-animate="true"}
+
+```yaml
+---
+title: "OARC Workshop"
+authors:
+  - name: Ryan Horne
+    orcid: 0000-0002-5009-3116
+    affiliation: Office of Advanced Research Computing, UCLA
+    affiliation-url: https://oarc.ucla.edu/
+    roles: writing
+    corresponding: true
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+```
+## Profile YAML {auto-animate="true"}
+
+```yaml
+---
+project:
+  type: website
+  output-dir: _website
+  render:
+    - index.qmd
+    - webinfo.qmd
+
+website:
+  title: The cool website I wanted this project to be in the first place
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - webinfo.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+---
+
+```

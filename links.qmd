@@ -1,0 +1,10 @@
+# Links Used in the Workshop
+
+- Quarto (https://quarto.org/)
+- Zotero (https://www.zotero.org/)
+- VS Code (https://code.visualstudio.com/)
+- GitHub (https://github.com/)
+- Python (https://www.python.org/downloads/)
+- Mermaid (https://mermaid-js.github.io/mermaid/#/)
+- Graphviz (https://graphviz.org/)
+- Citation Style Language (CSL) project (https://citationstyles.org/)
