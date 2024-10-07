@@ -18,6 +18,10 @@ format:
 
 ---
 
+## Website {auto-animate="true"}
+
+https://github.com/rmhorne/2024-fall-ucla-workshop-markdown-quarto
+
 ## Agenda {auto-animate="true"}
 
 ::: incremental
