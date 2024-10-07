@@ -1,0 +1,789 @@
+---
+title: Authoring and Publication Pipeline Using Markdown, Zotero, VS Code, GitHub, and Quarto 
+author:
+  - name: Ryan Horne
+    orcid: 0000-0002-5009-3116 
+    affiliation: Office of Advanced Research Computing, UCLA
+    affiliation-url: https://oarc.ucla.edu/
+    roles: writing
+    corresponding: true
+license: "CC BY-SA"
+format:
+ revealjs:
+  preview-links: true
+  logo: https://raw.githubusercontent.com/rmhorne/work-images/ed53108a33ec6274cff3dd8c06aad26405ef7645/images/creative-commons/cc-by-sa.svg
+  theme: [default, styles.scss]
+  mermaid:
+    theme: forest
+
+---
+
+## Agenda {auto-animate="true"}
+
+::: incremental
+-   Quick introduction to VS Code
+-   Overview / introduction to Markdown
+-   Tour of Zotero
+-   Quarto and your work
+-   Integrating GitHub into your writing
+:::
+
+## Preliminary Setup {auto-animate="true"}
+
+Install the following:
+
+::: incremental
+-   Quarto (https://quarto.org/)
+-   Zotero (https://www.zotero.org/)
+-   VS Code (https://code.visualstudio.com/)
+-   Create an account on GitHub (https://github.com/)
+- Python (https://www.python.org/downloads/)
+:::
+
+## Fundamental Ideas {auto-animate="true"}
+
+::: incremental
+-   Separate format from content
+    -   Just like digital projects separating code from data
+-   Emphasis on reproducibility and portability
+-   Control and integration of tools without extensive overhead
+    -   Want to be powerful and light weight
+:::
+
+## Setting the Space: VS Code {auto-animate="true"}
+
+::: incremental
+-   Using VS Code for the workshop
+    -   Will also reference Jupyter
+-   VS Code is free and cross-platform
+    -   Although there may be some issues with its adoption, etc
+-   VS Code allows us to tie together all of our pieces
+-   Allows us to use markdown documents without other overhead
+:::
+
+## Integration with Quarto and Other Extensions {auto-animate="true"}
+
+In the extension manager, we will install the following extensions
+
+::: incremental
+-   Python
+-   Jupyter
+-   Quarto
+:::
+
+## Start with a Basic Example {auto-animate="true"}
+
+::: incremental
+-   First we are going to create a simple markdown document to learn about Quarto and Markdown
+-   Next discuss Quarto projects
+-   Then talk about different file types, output options, etc
+:::
+
+## Start a New Markdown Document {auto-animate="true"}
+
+::: incremental
+- Open VSCode  
+- Create a new file
+    -   Save as a .qmd in a new directory for this workshop
+        - Normal markdown is .md; .qmd allows you to insert live code
+-   Type in a heading and some text: ` # My First Document `
+    - Add something else under it!
+-   Now we will preview the render
+:::
+
+## Preview the Document {auto-animate="true"}
+
+::: incremental
+- Once you have written some markdown, right click and then ` Edit in Visual Mode `
+- Now we can preview as well
+    - Can be done in VS Code
+    -   I prefer to do this manually; use
+        -   `quarto preview FILENAME`
+- We will now fix some possible issues with VS Code
+:::
+
+## Basic Markdown, Up, Left, Right, and Center {data-auto-slide="false" auto-animate="true"}
+
+Headings
+
+```         
+# First level heading
+## Second level heading
+### Third level heading
+#### Fourth level heading
+```
+
+## Basic Markdown: Emphasis {auto-animate="true"}
+
+::: incremental
+-   Italics in `*` or `_`
+-   Bold in `**` or `__`
+-   **This** is a *great* workshop!
+:::
+
+## Basic Markdown: Unordered Lists {auto-animate="true"}
+
+::: incremental
+-   Lists can use `*` or `-`
+    -   New lines between items; use tab to indent
+    -   I prefer `-` to keep things different and simple
+:::
+
+::: fragment
+The example is above!
+:::
+
+## Basic Markdown: Ordered Lists {auto-animate="true"}
+
+::: incremental
+-   Ordered Lists use `1.` etc
+    -   New lines between items; use tab to indent
+    -   What do you think will happen if you type...
+:::
+
+::: fragment
+::: columns
+::: {.column width="50%"}
+-   `1. Item 1`
+-   `1. Item 2`
+-   `1. Item 3`
+:::
+
+::: {.column width="50%"}
+::: fragment
+1.  Item 1
+2.  Item 2
+3.  Item 3
+:::
+:::
+:::
+:::
+
+## Block Quotes {auto-animate="true"}
+
+If you want to use a block quote, use `>`
+
+::: fragment
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus iaculis efficitur dolor nec tempus. Sed quis turpis a purus sagittis tincidunt ac id ante. Cras blandit porttitor lacus. Sed ullamcorper, urna in volutpat semper, nulla nibh convallis justo, vel viverra leo augue quis velit. Quisque rutrum nibh vel auctor venenatis. Praesent elementum mattis porttitor. Etiam rhoncus dolor posuere mattis euismod. Vivamus gravida risus vel vestibulum gravida. In quis vestibulum metus.
+:::
+
+## Links and Images {.smaller auto-animate="true"}
+
+::: incremental
+-   Treated in very similar ways
+-   Links are text in square brackets, link in parentheses:
+    -   `[UCLA](https://www.ucla.edu/)`
+    -   [UCLA](https://www.ucla.edu/)
+-   Images are the same, but start with an `!`:
+    -   `- ![](https://oarc.ucla.edu/themes/custom/oarc/logo.svg)`
+    -   ![](https://oarc.ucla.edu/themes/custom/oarc/logo.svg)
+:::
+
+## Tables
+
+::: incremental
+- Can be a pain
+- Visual can do this for us!
+:::
+
+::: fragment
+
+```
+| Letters That begin with I | Any Number | Potent Potables |
+|-----------|----------------|-----------------|
+| 200       | 200            | 200             |
+| 400       | 400            | 400             |
+| 600       | 600            | 600             |
+
+```
+:::
+
+## Rendered Table
+
+| Letters That begin with I | Any Number | Potent Potables |
+|-----------|----------------|-----------------|
+| 200       | 200            | 200             |
+| 400       | 400            | 400             |
+| 600       | 600            | 600             |
+
+## Formatted Non-Executable Code {auto-animate="true"}
+
+::: incremental 
+- Code uses back-ticks: ``  `  ``
+    - You can specify the language of the code and Quarto will higlight accordingly
+- Use three back ticks for blocks of code
+:::
+
+::: fragment
+::: columns
+::: {.column width="50%"}
+```
+```html
+<html>
+    <head>
+        <title>Website Title</title>
+    </head>
+    <body>
+    </body>
+</html>```
+
+```
+:::
+
+::: {.column width="50%"}
+::: fragment
+
+``` html
+<html>
+    <head>
+        <title>Website Title</title>
+    </head>
+    <body>
+    </body>
+</html>
+```
+:::
+:::
+:::
+:::
+
+## So What? {auto-animate="true"}
+
+Sure, the format looks nice. Now what?
+
+::: incremental
+
+- We will add live code!
+- We will look at some configuration options
+- Explore some of the powerful authoring and rendering abilities
+- Split our documents into (re)usable pieces
+- Add some academic uses!
+
+:::
+
+## First Things First {auto-animate="true"}
+
+First, we are going to put in a ` yaml ` header. This allows us to
+
+::: incremental
+- Specify metadata
+- Control outputs
+- Make some nice things
+:::
+
+## YAML Options {auto-animate="true"}
+
+```yaml
+---
+title: "OARC Workshop"
+toc: true
+authors:
+  - name: Ryan Horne
+    orcid: 0000-0002-5009-3116
+    affiliation: Office of Advanced Research Computing, UCLA
+    affiliation-url: https://oarc.ucla.edu/
+    roles: writing
+    corresponding: true
+format:
+  html:
+    code-fold: true
+---
+
+```
+
+## YAML Options Part 2 {auto-animate="true"}
+
+```yaml
+---
+title: "OARC Workshop"
+authors:
+  - name: Ryan Horne
+    orcid: 0000-0002-5009-3116
+    affiliation: Office of Advanced Research Computing, UCLA
+    affiliation-url: https://oarc.ucla.edu/
+    roles: writing
+    corresponding: true
+format:
+    html:
+        toc: true
+        code-fold: true
+    revealjs:
+        output-file: presentation.html
+        logo: https://raw.githubusercontent.com/rmhorne/work-images/ed53108a33ec6274cff3dd8c06aad26405ef7645/images/creative-commons/cc-by-sa.svg
+        theme: [default]
+    docx:
+        toc: true
+    pdf:
+        toc: true
+---
+
+```
+
+## Create the .pdf and .docx {auto-animate="true"}
+
+::: incremental
+- We can do this from VS Code or from the terminal
+- Again I prefer the terminal for this
+    - ` quarto render document.qmd --to pdf `
+    - might have to ` quarto update tinytex `
+:::
+
+## Now We Are Going to Add Some Code {auto-animate="true"}
+
+::: incremental
+- If you do not code, no worries! This is a quick and dirty sample to show you how this can be added
+- If you do not code and you can not get your Python to work, again do not worry!
+    - The *rest* of the workshop will be relevant!
+:::
+
+## To See Python Code {auto-animate="true"}
+
+- We will (quick and dirty!) install a python environment
+    - Activate that environment
+- Install needed packages (pip3 install matplotlib ipykernel jupyter)
+- Executable code uses {language name} at start of code block
+
+## First Thing {auto-animate="true" .smaller}
+
+::: incremental
+
+- Create a new Python environment
+    - ` > Python: Create Environment  ` 
+        - venv
+    - Activate vnev
+        - ` source .venv/bin/activate ` 
+    - Select your Python
+        -  ` > Python: Select Interpreter`
+        - Select the venv you just created
+    - Install packages
+        - ` pip3 install matplotlib jupyter quarto ` 
+
+::: 
+
+## YAML Options {auto-animate="true"}
+
+```yaml
+---
+title: "OARC Workshop"
+authors:
+  - name: Ryan Horne
+    orcid: 0000-0002-5009-3116
+    affiliation: Office of Advanced Research Computing, UCLA
+    affiliation-url: https://oarc.ucla.edu/
+    roles: writing
+    corresponding: true
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+```
+
+
+
+## Our Code {auto-animate="true"}
+
+```python
+# importing the required module  
+import matplotlib.pyplot as plt  
+    
+# x axis values  
+x = [1,2,3]  
+# corresponding y axis values  
+y = [2,4,1]  
+    
+# plotting the points   
+plt.plot(x, y)  
+    
+# naming the x axis  
+plt.xlabel('x - axis')  
+# naming the y axis  
+plt.ylabel('y - axis')  
+    
+# giving a title to my graph  
+plt.title('My first graph!')  
+    
+# function to show the plot  
+plt.show()  
+
+```
+
+## {auto-animate="true"}
+ 
+```{python}
+# importing the required module  
+import matplotlib.pyplot as plt  
+    
+# x axis values  
+x = [1,2,3]  
+# corresponding y axis values  
+y = [2,4,1]  
+    
+# plotting the points   
+plt.plot(x, y)  
+    
+# naming the x axis  
+plt.xlabel('x - axis')  
+# naming the y axis  
+plt.ylabel('y - axis')  
+    
+# giving a title to my graph  
+plt.title('My first graph!')  
+    
+# function to show the plot  
+plt.show()  
+
+```
+
+## Add Some More to Your Code Block {auto-animate="true"}
+
+```
+#| label: fig-test
+#| fig-cap: "A test plot"
+
+```
+::: fragment
+
+```{python}
+#| label: fig-test
+#| fig-cap: "A test plot"
+
+# importing the required module  
+import matplotlib.pyplot as plt  
+    
+# x axis values  
+x = [1,2,3]  
+# corresponding y axis values  
+y = [2,4,1]  
+    
+# plotting the points   
+plt.plot(x, y)  
+    
+# naming the x axis  
+plt.xlabel('x - axis')  
+# naming the y axis  
+plt.ylabel('y - axis')  
+    
+# giving a title to my graph  
+plt.title('My first graph!')  
+    
+# function to show the plot  
+plt.show()  
+
+```
+
+:::
+
+## I Was Told There Would Be No Math {auto-animate="true"}
+
+There are two different ways to display math equations:
+
+::: fragment
+
+inline math: $E = mc^{2}$
+
+:::
+::: fragment
+display math: $$E = mc^{2}$$
+
+:::
+
+## Diagrams {auto-animate="true"}
+
+::: incremental
+- Different options
+    - Mermaid and Graphviz
+- Just to give you a taste, some examples here
+:::
+
+## Mermaid Flow Chart {auto-animate="true"}
+
+```mermaid
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+```
+
+## Mermaid Flow Chart {auto-animate="true"}
+
+```{mermaid}
+flowchart LR
+  A[Hard edge] --> B(Round edge)
+  B --> C{Decision}
+  C --> D[Result one]
+  C --> E[Result two]
+```
+
+## We Can Change the YAML
+
+```yaml
+format:
+  html:
+    mermaid:
+      theme: forest
+
+```
+
+## Quick Network With GraphViz
+
+```dot
+```{dot}
+graph {
+bgcolor=red;
+  A -- B
+  A -- C
+
+}
+```
+
+## Quick Network With GraphViz
+
+::: {#fig-simple}
+
+```{dot}
+graph {
+bgcolor=red;
+  A -- B
+  A -- C
+}
+```
+
+This is a simple graphviz graph
+:::
+
+
+## Add Zotero {auto-animate="true"}
+
+::: incremental 
+- Zotero is enabled by default! <br/>
+- All you need to do is start typing in Visual Mode, then when you get to a citation type ` [@ ]` 
+
+:::
+
+## Render All the Things {auto-animate="true"}
+
+Instead of specifying anything, just type <br/> ` quarto render whatever.qmd `
+
+::: incremental
+
+- What happens when you now preview different things?
+- Just typing `render` renders all of the options
+    - Can be very useful!
+
+::::
+
+## Same Document, Different Commands {auto-animate="true"}
+
+::: incremental
+- There are different commands that can be embedded in your documents which do different things depending on the format you choose.
+- Example: Using the ` ## ` heading indicates a new slide
+    - Use this to your advantage when writing a document!
+:::
+
+## Something I may use too much.... {auto-animate="true"}
+
+::: incremental
+- There are different options to select your slides from
+- reveal.js is perhaps the most straightforward
+    - you can use ``` ::: ``` to indicate sections for commands
+        - Like incremental lists!
+    - These render as normal lists in other output formats
+    - Check out a render to revealjs
+:::
+
+## Starting a New Project {auto-animate="true"}
+
+We can directly start a new Quarto project / document in VS Code
+
+::: incremental
+-  At the top of the workspace type <br/> `> quarto`
+- You will see a selection of commands. Select <br/> `Quarto: Create Project`
+- We are going to do a book for sake of argument
+-   Put this into another directory
+:::
+
+## Take a Tour {auto-animate="true"}
+
+We will now look at the files, the preview, and discuss some options
+
+## Create a New Website Project {auto-animate="true"}
+
+::: incremental
+- Your task is to create a new project
+- Add some basic Markdown
+- Preview / render it
+:::
+
+## Why Are We Creating Different Projects? {auto-animate="true"}
+
+::: incremental
+- What we can do is reuse some of the files in different ways in different formats through *profiles*
+- We will start with the yaml for a book project
+- We will then add the yaml for other things
+:::
+
+## Use the Book Project Directory {auto-animate="true"}
+
+::: incremental
+- First, copy in the yaml and styles.css from the website directory
+- We will rename the yaml to _quarto-site.yaml
+    - The part after the hyphen is the *profile name*
+- We will make some changes then preview and render different parts of our project
+:::
+
+## Modify the YAML {auto-animate="true"}
+
+```yaml
+project:
+  type: website
+  output-dir: _website
+  render:
+    - index.qmd
+    - webinfo.qmd
+
+website:
+  title: The cool website I wanted this project to be in the first place
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - webinfo.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+```
+
+## Create a File and Render {auto-animate="true"}
+
+::: incremental
+- Create the webinfo.qmd file
+    - put anything in it
+- Now ` quarto preview `
+    - Same old book
+- Now ` quarto preview --profile site `
+    - Wait....what???
+:::
+
+## Reuse {auto-animate="true"}
+
+::: incremental
+
+- Let us pause for a moment and think about reusability
+- Can you break a work into different parts?
+- Are there sub-parts, code, sections that you want to reuse?
+- This can be taken to an extreme....
+
+:::
+
+## In a Profile {auto-animate="true"}
+
+::: incremental
+
+- Using the ` ::: ` signifier, we can show a section that is only included in a profile
+- Open the ` index.qmd ` file
+- Add the following: ``` ::: {.content-visible when-profile="site"} This content will only appear in the site version. ::: ```
+
+:::
+
+## In Includes {auto-animate="true"}
+
+::: incremental
+- Way to include common texts, blocks, computations, etc in multiple documents
+    - Possible examples: Syllabi, funding information, CV sections, etc
+- Can start the file name with an underscore ` _ ` to have the render skip them
+    - To include in a file use <br /> ` {{< include filename.qmd >}} `
+:::
+
+## Includes {auto-animate="true"}
+
+::: incremental
+- Using the UCLA inclusive syllabus guide: https://ceils.ucla.edu/teaching-guide-designing-an-inclusive-syllabus/ 
+- We will grab the template and make some sections
+- We will keep the include files clean
+- We will then make a new file from the menu
+:::
+
+## So I Include Your Includes {auto-animate="true"}
+
+::: incremental
+- You can include a file that has includes
+- You can combine includes with profiles
+- Both can be tailored to different formats, colors, publishing standards, etc
+- In short, write once, reuse all over!
+:::
+
+## More YAML Options {auto-animate="true"}
+
+::: incremental
+
+- ` number-sections: true `
+- ` mainfont: "" `
+- ` csl: https://raw.githubusercontent.com/citation-style-language/styles/refs/heads/master/nature.csl`
+    - You can browse citation styles and get more information here: https://citationstyles.org/
+:::
+
+## Now on to GitHub {auto-animate="true"}
+
+::: incremental
+
+- You can stay within the VS Code space and use GitHub
+- This is great for starting to revise or move around typing
+    - Version control is a *big deal*
+    - We are not going to get into the weeds here; we have more workshops for that!
+    - Now click on *Open on GitHub*
+
+:::
+
+## As Easy as Clicking on a Button {auto-animate="true"}
+
+::: incremental
+
+- There is a side button that connects to GitHub
+- Click it, connect to your account
+- You can make this private!
+
+:::
+
+## Add a README and Pull {auto-animate="true"}
+
+::: incremental
+- Click on the *Add a README* button
+    - You can write this in markdown!
+- When you are done, click on the *Commit changes...* button
+- Go back to VS Code, where we will pull those changes
+- Make some changes and push to the server!
+:::
+
+## Why GitHub? {auto-animate="true"}
+
+This is the process for syncing any new or changed files with GitHub. Do this whenever you make changes that you want to save to your files; committing files and pushing them to GitHub creates "save points", or states that you can revert to if needed.
+
+
+## On to Jupyter {auto-animate="true"}
+
+::: incremental
+- Quarto can also render Jupyter notebooks using many of the same options!
+- Download a sample Jupyter notebook here: https://quarto.org/docs/get-started/hello/_hello.ipynb
+    - Hopefully Python is working from before!
+- Open the notebook either in Jupyter or VS Code
+- Try rendering and preview. Can you think of how to use this?
+:::
+
+## This is Only the Beginning {auto-animate="true"}
+
+::: incremental
+- This workshop is to get you introduced to this pipeline
+- Show some of the options but in no way all of them!
+- We could dedicate workshops to each of the project types, slides, etc
+- The idea is to get you *started* and to encourage you to use a reproducible and customizable pipeline
+:::
+
+## Any Questions?
+

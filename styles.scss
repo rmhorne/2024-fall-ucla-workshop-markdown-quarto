@@ -1,0 +1,34 @@
+/*-- scss:defaults --*/
+$body-bg: #005c96 !default;
+$body-color: white !default;
+
+/*-- scss:rules --*/
+.slide-background-content{
+  background-color: #005c96;
+}
+
+/* IBM palette from https://davidmathlogic.com/colorblind with black added */
+
+.section-1 {
+  background-color: #648FFF;
+} 
+
+.section-2 {
+  background-color: #785EF0;
+} 
+
+.section-3 {
+  background-color: #DC267F;
+} 
+
+.section-4 {
+  background-color: #FE6100;
+} 
+
+.section-5 {
+  background-color: #FFB000;
+} 
+
+.section-6 {
+  background-color: #000000;
+} 
